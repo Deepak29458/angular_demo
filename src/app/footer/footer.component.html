@@ -1,0 +1,15 @@
+<div class="container-fluid bg-dark text-white">
+    <div class="row ms-1">
+        <div *ngFor="let footerItem of footerItems" [class]="footerItem['col-class']">
+            <h5 class="container nav-item ps-3 text-dark-grey"> {{footerItem['heading']}} </h5>
+            <div *ngFor="let subItem of footerItem['items']" class="footer-item-content ">  
+                <a *ngIf="!subItem['external-link']" [routerLink]="subItem['link']" class="nav-link text-white">
+                    &nbsp;{{subItem['name']}}
+                </a>
+                <a *ngIf="subItem['external-link']" [href]="subItem['link']" target="_blank" class="nav-link text-white ">
+                    &nbsp;{{subItem['name']}}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

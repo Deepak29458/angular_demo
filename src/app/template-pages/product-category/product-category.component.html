@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 my-2 mt-1">
+        <div *ngFor="let products of allProducts['allProduct'] " class="col  text-center">
+            <div class="border rounded p-2 box-hover" [routerLink]="products['link']">
+                <img [src]="products['image']" alt="" >
+                <div class="text-start ps-2 hide">
+                    <p class="fw-bold mt-2">{{products['name']}}</p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span> <br>
+                    <span> price {{products['price']}}</span> <span class="text-decoration-line-through ps-3">₹ 5000</span><br>
+                    <div class="d-flex gap-2 mt-2 showbtn justify-content-between">
+                        <button class="btn btn-outline-secondary" type="button">ADD TO CART</button>
+                        <button class="btn btn-outline-secondary" type="button">WISHLIST</button>
+                    </div>
+                </div>
+           </div>
+        </div> 
+    </div>
+</div>

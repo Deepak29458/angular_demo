@@ -1,0 +1,13 @@
+  
+  .footer-item-content a {
+    border-radius: 5px;
+  }
+  
+  .footer-item-content a:hover {
+    border-radius: 5px;
+    background-color: #dddddd;
+  }
+  
+  .caps {
+    text-transform: uppercase;
+  }

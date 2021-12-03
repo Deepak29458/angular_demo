@@ -1,0 +1,106 @@
+
+<app-header></app-header>
+
+<div class="container-fluid">
+    <div id="carouselExampleControls" class="carousel slide my-4 d-none d-lg-block" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button *ngFor="let slider of homepageItems['sliders']; let i = index" type="button"
+                data-bs-target="#carouselExampleControls" [attr.data-bs-slide-to]="i" [class]="slider['activeClass']"
+                aria-current="true" [attr.aria-label]="'Slide ' + i"></button>
+        </div>
+        <div class="carousel-inner">
+            <a *ngFor="let slider of homepageItems['sliders']" class="carousel-item"
+                [class]="slider['activeClass']" data-bs-interval="3000">
+                <img [src]="slider['image']" class="d-block w-100">
+            </a>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="container">
+        <h5>Shop from Top Categories</h5>
+        <div class="row row-cols-2 row-cols-lg-5 g-1 g-lg-3 my-2 mt-1">
+            <div *ngFor="let topCategorie of topCategories['topCategoriesIteams'] "  class="col">
+                    <img [src]="topCategorie['image']" [routerLink]="topCategorie['link']" class="box-shadow-hover" alt="" width="90%">
+            </div>
+        </div>
+    </div>
+
+    <div class="my">
+        <img src="assets/image.jpg" alt="" width="100%">
+    </div>
+
+    <div class="container my-3">
+        <h5>Women' Fashion</h5>
+        <div class="row g-2 my-2">
+            <div class="col-6">
+                <img src="assets/women/img-1.png" class="rounded" alt=""width="100%">
+            </div>
+            <div class="col-6">
+                <img src="assets/women/img-2.png" class="rounded" alt="" width="100%">
+            </div>
+        </div>
+        <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 my-2 mt-1">
+            <div *ngFor="let iteams of womensIteams['womensIteam'] " class="col">
+                    <img [src]="iteams['image']" [routerLink]="iteams['link']" class="border rounded" alt="" width="100%">
+            </div>
+        </div>
+        <h5 class="my-4">Offers on Household & Personal care</h5>
+        <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 my-2 mt-1">
+            <div *ngFor="let iteams of personalCareIteams['personalCareIteam'] " class="col  text-center">
+                <div class="border rounded p-2 box-shadow-hover" [routerLink]="iteams['link']">
+                    <img [src]="iteams['image']" class="mt-4" alt="" width="50%">
+                    <p class="fw-bold">{{iteams['titel']}}</p>
+               </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-2 my-3">
+        <div class="col-6">
+            <img src="assets/picture.jpg" class="rounded" alt=""width="100%">
+        </div>
+        <div class="col-6">
+            <img src="assets/picture-1.jpg" class="rounded" alt="" width="100%">
+        </div>
+        <div class="col-6">
+            <img src="assets/picture-2.jpg" class="rounded" alt=""width="100%">
+        </div>
+        <div class="col-6">
+            <img src="assets/picture-3.jpg" class="rounded" alt="" width="100%">
+        </div>
+    </div>
+
+    <div class="container my-3">
+        <h5 class="my-4">Hottest Deals</h5>
+        <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 my-2 mt-1">
+            <div *ngFor="let iteams of hotDealsIteams['hotDealsIteam'] " class="col">
+                    <a [routerLink]="iteams['link']">
+                        <img [src]="iteams['image']" class="border rounded box-shadow-hover" alt="" width="100%">
+                    </a>
+            </div>
+        </div>
+
+        <h5 class="my-4">Kid's Fashion</h5>
+        <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 my-2 mt-1">
+            <div *ngFor="let iteams of kidesFashionIteams['kidesFashionIteam'] " class="col">
+                <a [routerLink]="iteams['link']">
+                    <img [src]="iteams['image']" class="border rounded box-shadow-hover" alt="" width="100%">
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<app-footer></app-footer>
